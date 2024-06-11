@@ -1,0 +1,11 @@
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\bin\Debug\MetasObjetivos.exe.config
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\bin\Debug\MetasObjetivos.exe
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\bin\Debug\MetasObjetivos.pdb
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\obj\Debug\MetasObjetivos.csproj.AssemblyReference.cache
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\obj\Debug\MetasObjetivos.Form1.resources
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\obj\Debug\MetasObjetivos.Properties.Resources.resources
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\obj\Debug\MetasObjetivos.Tarefas.resources
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\obj\Debug\MetasObjetivos.csproj.GenerateResource.cache
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\obj\Debug\MetasObjetivos.csproj.CoreCompileInputs.cache
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\obj\Debug\MetasObjetivos.exe
+D:\Documentos\Projetos Geral\Tarefas_objetivos\MetasObjetivos\MetasObjetivos\obj\Debug\MetasObjetivos.pdb

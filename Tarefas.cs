@@ -5,20 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MetasObjetivos {
-    public partial class Form1 : Form {
-        public Form1() {
+    public partial class Tarefas : Form {
+        public Tarefas() {
             InitializeComponent();
-        }
-
-        private void btnEntrar_Click(object sender, EventArgs e) {
-            Close();
-            Thread thread = new Thread(() => Application.Run(new Tarefas()));
-            thread.Start();
         }
     }
 }
