@@ -15,14 +15,46 @@ namespace MetasObjetivos {
     public partial class Form1 : Form {
         SqlCommand command;
         int NIVEL;
+        SqlDataAdapter adapter;
         public Form1() {
             InitializeComponent();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e) {
-            Close();
-            Thread thread = new Thread(() => Application.Run(new Tarefas()));
-            thread.Start();
+            string query = "SELECT IDUSUARIO,Nivel, NICK, SENHA FROM USUARIO WHERE NICK = @NICK AND SENHA = @SENHA";
+
+            try {
+                BDSQLServer.Connection();
+                command = new SqlCommand(query,BDSQLServer.Connection());
+                if(!string.IsNullOrEmpty(txtNickLogin.Text) && !string.IsNullOrEmpty(txtLoginSenha.Text)) {
+                    command.Parameters.AddWithValue("@NICK", txtNickLogin.Text);
+                    command.Parameters.AddWithValue("@SENHA", txtLoginSenha.Text);
+                    adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    foreach(DataRow datas in dataTable.Rows) {
+                        if (datas["NICK"].ToString() == txtNickLogin.Text && datas["SENHA"].ToString() == txtLoginSenha.Text) {
+                            Close();
+                            Thread thread = new Thread(() => Application.Run(new Tarefas((int)datas["IDUSUARIO"], datas["NICK"].ToString(), (int)datas["NIVEL"])));
+                            thread.Start();
+                        }
+                        else {
+                            MessageBox.Show("Usuario ou Senha Incorreta", "Aviso");
+                        }
+                    }
+                    
+                }
+
+            }catch(Exception ex) {
+                MessageBox.Show(ex.Message, "Erro: Usuario" );
+
+            } finally {
+                BDSQLServer.Desconnection();
+                command.Dispose();
+                adapter.Dispose();
+               
+            }
+           
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e) {

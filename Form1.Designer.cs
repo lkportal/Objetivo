@@ -26,7 +26,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNickLogin = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLoginSenha = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtNick = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -69,13 +69,13 @@
             this.txtNickLogin.Size = new System.Drawing.Size(167, 26);
             this.txtNickLogin.TabIndex = 2;
             // 
-            // textBox1
+            // txtLoginSenha
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(67, 264);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 26);
-            this.textBox1.TabIndex = 3;
+            this.txtLoginSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoginSenha.Location = new System.Drawing.Point(67, 264);
+            this.txtLoginSenha.Name = "txtLoginSenha";
+            this.txtLoginSenha.Size = new System.Drawing.Size(167, 26);
+            this.txtLoginSenha.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -211,7 +211,7 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNick);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtLoginSenha);
             this.Controls.Add(this.txtNickLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -228,7 +228,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNickLogin;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLoginSenha;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtNick;
         private System.Windows.Forms.TextBox txtEmail;
