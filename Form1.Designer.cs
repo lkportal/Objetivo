@@ -74,6 +74,7 @@
             this.txtLoginSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoginSenha.Location = new System.Drawing.Point(67, 264);
             this.txtLoginSenha.Name = "txtLoginSenha";
+            this.txtLoginSenha.PasswordChar = '*';
             this.txtLoginSenha.Size = new System.Drawing.Size(167, 26);
             this.txtLoginSenha.TabIndex = 3;
             // 

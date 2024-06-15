@@ -55,6 +55,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Tarefas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,13 +72,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Tarefas.resx">
       <DependentUpon>Tarefas.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +90,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lv100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lv1_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lv6_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lv11_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lv21_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lv51_70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lv71_99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lv6_101.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

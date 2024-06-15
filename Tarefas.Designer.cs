@@ -26,7 +26,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.labelN = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.concluida = new System.Windows.Forms.Label();
@@ -46,9 +45,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
+            this.labelNick = new System.Windows.Forms.Label();
             this.labelNivel = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Tarefa = new System.Windows.Forms.TabPage();
+            this.btnRemoveCategoria = new System.Windows.Forms.Button();
+            this.btnAdicionaCategoria = new System.Windows.Forms.Button();
             this.AdicionaTarefas = new System.Windows.Forms.Label();
             this.detalhe = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -65,10 +68,9 @@
             this.labelConcluidas = new System.Windows.Forms.Label();
             this.labelTotalTarefas = new System.Windows.Forms.Label();
             this.config = new System.Windows.Forms.TabPage();
-            this.labelNick = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Tarefa.SuspendLayout();
             this.detalhe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -109,17 +111,6 @@
             this.labelN.Size = new System.Drawing.Size(52, 24);
             this.labelN.TabIndex = 2;
             this.labelN.Text = "Nivel";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Location = new System.Drawing.Point(281, 149);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(212, 194);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
             // 
             // label2
             // 
@@ -248,8 +239,9 @@
             // 
             // txtAdicionaCategoria
             // 
+            this.txtAdicionaCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtAdicionaCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdicionaCategoria.Location = new System.Drawing.Point(570, 402);
+            this.txtAdicionaCategoria.Location = new System.Drawing.Point(570, 370);
             this.txtAdicionaCategoria.Name = "txtAdicionaCategoria";
             this.txtAdicionaCategoria.Size = new System.Drawing.Size(238, 31);
             this.txtAdicionaCategoria.TabIndex = 17;
@@ -257,7 +249,7 @@
             // labelAdicionaCategoria
             // 
             this.labelAdicionaCategoria.AutoSize = true;
-            this.labelAdicionaCategoria.Location = new System.Drawing.Point(567, 372);
+            this.labelAdicionaCategoria.Location = new System.Drawing.Point(567, 349);
             this.labelAdicionaCategoria.Name = "labelAdicionaCategoria";
             this.labelAdicionaCategoria.Size = new System.Drawing.Size(150, 18);
             this.labelAdicionaCategoria.TabIndex = 18;
@@ -267,10 +259,14 @@
             // 
             this.categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoria.FormattingEnabled = true;
+            this.categoria.Items.AddRange(new object[] {
+            "estudar",
+            "comprar"});
             this.categoria.Location = new System.Drawing.Point(335, 313);
             this.categoria.Name = "categoria";
             this.categoria.Size = new System.Drawing.Size(144, 33);
             this.categoria.TabIndex = 19;
+            this.categoria.SelectedIndexChanged += new System.EventHandler(this.categoria_SelectedIndexChanged);
             // 
             // labelCategoria
             // 
@@ -322,6 +318,14 @@
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
             // 
+            // labelNick
+            // 
+            this.labelNick.AutoSize = true;
+            this.labelNick.Location = new System.Drawing.Point(95, 47);
+            this.labelNick.Name = "labelNick";
+            this.labelNick.Size = new System.Drawing.Size(0, 18);
+            this.labelNick.TabIndex = 7;
+            // 
             // labelNivel
             // 
             this.labelNivel.AutoSize = true;
@@ -338,8 +342,23 @@
             this.labelNome.Size = new System.Drawing.Size(0, 18);
             this.labelNome.TabIndex = 5;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Location = new System.Drawing.Point(279, 144);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(207, 227);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
             // Tarefa
             // 
+            this.Tarefa.Controls.Add(this.btnRemoveCategoria);
+            this.Tarefa.Controls.Add(this.btnAdicionaCategoria);
             this.Tarefa.Controls.Add(this.AdicionaTarefas);
             this.Tarefa.Controls.Add(this.titulo);
             this.Tarefa.Controls.Add(this.txtTitulo);
@@ -361,6 +380,28 @@
             this.Tarefa.TabIndex = 1;
             this.Tarefa.Text = "Tarefas";
             this.Tarefa.UseVisualStyleBackColor = true;
+            // 
+            // btnRemoveCategoria
+            // 
+            this.btnRemoveCategoria.AutoSize = true;
+            this.btnRemoveCategoria.Location = new System.Drawing.Point(716, 407);
+            this.btnRemoveCategoria.Name = "btnRemoveCategoria";
+            this.btnRemoveCategoria.Size = new System.Drawing.Size(92, 28);
+            this.btnRemoveCategoria.TabIndex = 24;
+            this.btnRemoveCategoria.Text = "Remover";
+            this.btnRemoveCategoria.UseVisualStyleBackColor = true;
+            this.btnRemoveCategoria.Click += new System.EventHandler(this.btnRemoveCategoria_Click);
+            // 
+            // btnAdicionaCategoria
+            // 
+            this.btnAdicionaCategoria.AutoSize = true;
+            this.btnAdicionaCategoria.Location = new System.Drawing.Point(570, 407);
+            this.btnAdicionaCategoria.Name = "btnAdicionaCategoria";
+            this.btnAdicionaCategoria.Size = new System.Drawing.Size(87, 28);
+            this.btnAdicionaCategoria.TabIndex = 23;
+            this.btnAdicionaCategoria.Text = "adicionar";
+            this.btnAdicionaCategoria.UseVisualStyleBackColor = true;
+            this.btnAdicionaCategoria.Click += new System.EventHandler(this.btnAdicionaCategoria_Click);
             // 
             // AdicionaTarefas
             // 
@@ -519,14 +560,6 @@
             this.config.Text = "Configuração";
             this.config.UseVisualStyleBackColor = true;
             // 
-            // labelNick
-            // 
-            this.labelNick.AutoSize = true;
-            this.labelNick.Location = new System.Drawing.Point(95, 47);
-            this.labelNick.Name = "labelNick";
-            this.labelNick.Size = new System.Drawing.Size(0, 18);
-            this.labelNick.TabIndex = 7;
-            // 
             // Tarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -536,11 +569,12 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Tarefas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Tarefas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Tarefa.ResumeLayout(false);
             this.Tarefa.PerformLayout();
             this.detalhe.ResumeLayout(false);
@@ -595,5 +629,7 @@
         private System.Windows.Forms.Label labelNome;
         private System.Windows.Forms.Label labelNivel;
         private System.Windows.Forms.Label labelNick;
+        private System.Windows.Forms.Button btnRemoveCategoria;
+        private System.Windows.Forms.Button btnAdicionaCategoria;
     }
 }
