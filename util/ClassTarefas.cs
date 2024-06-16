@@ -5,30 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MetasObjetivos.util {
-    internal class Tarefas {
+    internal class ClassTarefas {
 
 
-        enum Estatus {
-            Completo,
-            Imcompleto
-        }
-        enum Prioridade {
-            Facil = 10,
-            Medio= 20,
-            Dificil = 25
-        }
+     
+        
         public string NomeTarefa { get; set; }
         public string Detalhes { get; set; }
         public string Categoria { get; set; }  
 
-        public DateTime DataCriacao { get; set; }
+        public string DataCriacao { get; set; }
 
-        public DateTime DataConclusao { get; set; } 
+        public DateTime TempoPassado { get; set; } 
 
-        private int Pontos { get; set; }    
+        public int Pontos { get;  private set; }    
         public string Mes {  get; set; }
 
-        public Tarefas(string nomeTarefa, string detalhes, string categoria, DateTime dataCriacao, int pontos, string mes) {
+        public ClassTarefas(string nomeTarefa, string detalhes, string categoria,string dataCriacao, int pontos, string mes) {
             NomeTarefa = nomeTarefa;
             Detalhes = detalhes;
             Categoria = categoria;

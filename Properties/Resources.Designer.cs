@@ -123,16 +123,6 @@ namespace MetasObjetivos.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lv6_101 {
-            get {
-                object obj = ResourceManager.GetObject("lv6_101", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap lv71_99 {
             get {
                 object obj = ResourceManager.GetObject("lv71_99", resourceCulture);

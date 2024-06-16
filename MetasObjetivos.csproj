@@ -66,7 +66,7 @@
     <Compile Include="Tarefas.Designer.cs">
       <DependentUpon>Tarefas.cs</DependentUpon>
     </Compile>
-    <Compile Include="util\Tarefas.cs" />
+    <Compile Include="util\ClassTarefas.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,9 +92,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lv100.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\lv1_5.png" />
   </ItemGroup>
   <ItemGroup>
@@ -113,7 +110,7 @@
     <None Include="Resources\lv71_99.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lv6_101.png" />
+    <None Include="Resources\lv100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

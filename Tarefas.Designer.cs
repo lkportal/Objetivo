@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tarefas));
             this.label1 = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.labelN = new System.Windows.Forms.Label();
@@ -42,13 +43,13 @@
             this.labelAdicionaCategoria = new System.Windows.Forms.Label();
             this.categoria = new System.Windows.Forms.ComboBox();
             this.labelCategoria = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInserirTarefa = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
+            this.picture = new System.Windows.Forms.PictureBox();
             this.labelNick = new System.Windows.Forms.Label();
             this.labelNivel = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Tarefa = new System.Windows.Forms.TabPage();
             this.btnRemoveCategoria = new System.Windows.Forms.Button();
             this.btnAdicionaCategoria = new System.Windows.Forms.Button();
@@ -70,7 +71,7 @@
             this.config = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.Tarefa.SuspendLayout();
             this.detalhe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -124,7 +125,6 @@
             this.label2.Size = new System.Drawing.Size(53, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "Rank";
-            this.label2.Visible = false;
             // 
             // labelTotal
             // 
@@ -166,6 +166,7 @@
             // 
             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo.Location = new System.Drawing.Point(6, 142);
+            this.txtTitulo.MaxLength = 20;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(238, 31);
             this.txtTitulo.TabIndex = 9;
@@ -173,7 +174,7 @@
             // txtDescricao
             // 
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricao.Location = new System.Drawing.Point(6, 217);
+            this.txtDescricao.Location = new System.Drawing.Point(22, 214);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(238, 140);
@@ -210,6 +211,7 @@
             this.comboDificuldade.Name = "comboDificuldade";
             this.comboDificuldade.Size = new System.Drawing.Size(144, 33);
             this.comboDificuldade.TabIndex = 13;
+            this.comboDificuldade.SelectedIndexChanged += new System.EventHandler(this.comboDificuldade_SelectedIndexChanged);
             // 
             // labelDificuldade
             // 
@@ -225,23 +227,25 @@
             this.dataPrazo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dataPrazo.Location = new System.Drawing.Point(337, 217);
             this.dataPrazo.Name = "dataPrazo";
-            this.dataPrazo.Size = new System.Drawing.Size(130, 24);
+            this.dataPrazo.Size = new System.Drawing.Size(143, 24);
             this.dataPrazo.TabIndex = 15;
+            this.dataPrazo.Enter += new System.EventHandler(this.dataPrazo_Enter);
             // 
             // labelPrazo
             // 
             this.labelPrazo.AutoSize = true;
             this.labelPrazo.Location = new System.Drawing.Point(334, 187);
             this.labelPrazo.Name = "labelPrazo";
-            this.labelPrazo.Size = new System.Drawing.Size(53, 18);
+            this.labelPrazo.Size = new System.Drawing.Size(84, 18);
             this.labelPrazo.TabIndex = 16;
-            this.labelPrazo.Text = "Prazo";
+            this.labelPrazo.Text = "Data Final";
             // 
             // txtAdicionaCategoria
             // 
             this.txtAdicionaCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtAdicionaCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdicionaCategoria.Location = new System.Drawing.Point(570, 370);
+            this.txtAdicionaCategoria.MaxLength = 20;
             this.txtAdicionaCategoria.Name = "txtAdicionaCategoria";
             this.txtAdicionaCategoria.Size = new System.Drawing.Size(238, 31);
             this.txtAdicionaCategoria.TabIndex = 17;
@@ -277,14 +281,15 @@
             this.labelCategoria.TabIndex = 20;
             this.labelCategoria.Text = "Seleciona Categoria";
             // 
-            // button1
+            // btnInserirTarefa
             // 
-            this.button1.Location = new System.Drawing.Point(361, 395);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 38);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInserirTarefa.Location = new System.Drawing.Point(361, 395);
+            this.btnInserirTarefa.Name = "btnInserirTarefa";
+            this.btnInserirTarefa.Size = new System.Drawing.Size(97, 38);
+            this.btnInserirTarefa.TabIndex = 21;
+            this.btnInserirTarefa.Text = "Adicionar";
+            this.btnInserirTarefa.UseVisualStyleBackColor = true;
+            this.btnInserirTarefa.Click += new System.EventHandler(this.btnInserirTarefa_Click);
             // 
             // tabControl1
             // 
@@ -302,12 +307,12 @@
             // 
             // Home
             // 
+            this.Home.Controls.Add(this.picture);
             this.Home.Controls.Add(this.labelNick);
             this.Home.Controls.Add(this.labelNivel);
             this.Home.Controls.Add(this.labelNome);
             this.Home.Controls.Add(this.labelUsuario);
             this.Home.Controls.Add(this.labelN);
-            this.Home.Controls.Add(this.pictureBox1);
             this.Home.Controls.Add(this.label2);
             this.Home.Controls.Add(this.label1);
             this.Home.Location = new System.Drawing.Point(4, 27);
@@ -317,6 +322,18 @@
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
+            // 
+            // picture
+            // 
+            this.picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
+            this.picture.Location = new System.Drawing.Point(277, 142);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(203, 196);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture.TabIndex = 8;
+            this.picture.TabStop = false;
             // 
             // labelNick
             // 
@@ -342,19 +359,6 @@
             this.labelNome.Size = new System.Drawing.Size(0, 18);
             this.labelNome.TabIndex = 5;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Location = new System.Drawing.Point(279, 144);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(207, 227);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            // 
             // Tarefa
             // 
             this.Tarefa.Controls.Add(this.btnRemoveCategoria);
@@ -362,7 +366,7 @@
             this.Tarefa.Controls.Add(this.AdicionaTarefas);
             this.Tarefa.Controls.Add(this.titulo);
             this.Tarefa.Controls.Add(this.txtTitulo);
-            this.Tarefa.Controls.Add(this.button1);
+            this.Tarefa.Controls.Add(this.btnInserirTarefa);
             this.Tarefa.Controls.Add(this.descricao);
             this.Tarefa.Controls.Add(this.txtDescricao);
             this.Tarefa.Controls.Add(this.comboDificuldade);
@@ -574,7 +578,7 @@
             this.tabControl1.ResumeLayout(false);
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.Tarefa.ResumeLayout(false);
             this.Tarefa.PerformLayout();
             this.detalhe.ResumeLayout(false);
@@ -589,7 +593,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.Label labelN;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label concluida;
@@ -605,7 +608,7 @@
         private System.Windows.Forms.Label labelAdicionaCategoria;
         private System.Windows.Forms.ComboBox categoria;
         private System.Windows.Forms.Label labelCategoria;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInserirTarefa;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Home;
         private System.Windows.Forms.TabPage Tarefa;
@@ -631,5 +634,6 @@
         private System.Windows.Forms.Label labelNick;
         private System.Windows.Forms.Button btnRemoveCategoria;
         private System.Windows.Forms.Button btnAdicionaCategoria;
+        private System.Windows.Forms.PictureBox picture;
     }
 }
