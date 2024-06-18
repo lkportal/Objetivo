@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tarefas));
             this.label1 = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
@@ -55,26 +56,33 @@
             this.btnAdicionaCategoria = new System.Windows.Forms.Button();
             this.AdicionaTarefas = new System.Windows.Forms.Label();
             this.detalhe = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalhes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dificuldade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listaTarefas = new System.Windows.Forms.DataGridView();
             this.labelAndamento = new System.Windows.Forms.Label();
             this.emAndamento = new System.Windows.Forms.Label();
             this.labelPontos = new System.Windows.Forms.Label();
             this.labelConcluidas = new System.Windows.Forms.Label();
             this.labelTotalTarefas = new System.Windows.Forms.Label();
             this.config = new System.Windows.Forms.TabPage();
+            this.oBJETIVOS_METASDataSet = new MetasObjetivos.OBJETIVOS_METASDataSet();
+            this.tAREFASBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tAREFASTableAdapter = new MetasObjetivos.OBJETIVOS_METASDataSetTableAdapters.TAREFASTableAdapter();
+            this.tAREFASBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nome_tarefa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalhes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diasRestantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prioridade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pontos_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.Tarefa.SuspendLayout();
             this.detalhe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaTarefas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oBJETIVOS_METASDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tAREFASBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tAREFASBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -185,7 +193,7 @@
             this.titulo.AutoSize = true;
             this.titulo.Location = new System.Drawing.Point(3, 121);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(50, 18);
+            this.titulo.Size = new System.Drawing.Size(46, 16);
             this.titulo.TabIndex = 11;
             this.titulo.Text = "Titulo";
             // 
@@ -194,7 +202,7 @@
             this.descricao.AutoSize = true;
             this.descricao.Location = new System.Drawing.Point(2, 187);
             this.descricao.Name = "descricao";
-            this.descricao.Size = new System.Drawing.Size(85, 18);
+            this.descricao.Size = new System.Drawing.Size(79, 16);
             this.descricao.TabIndex = 12;
             this.descricao.Text = "Descrição";
             // 
@@ -218,7 +226,7 @@
             this.labelDificuldade.AutoSize = true;
             this.labelDificuldade.Location = new System.Drawing.Point(332, 121);
             this.labelDificuldade.Name = "labelDificuldade";
-            this.labelDificuldade.Size = new System.Drawing.Size(91, 18);
+            this.labelDificuldade.Size = new System.Drawing.Size(87, 16);
             this.labelDificuldade.TabIndex = 14;
             this.labelDificuldade.Text = "Dificuldade";
             // 
@@ -227,7 +235,7 @@
             this.dataPrazo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dataPrazo.Location = new System.Drawing.Point(337, 217);
             this.dataPrazo.Name = "dataPrazo";
-            this.dataPrazo.Size = new System.Drawing.Size(143, 24);
+            this.dataPrazo.Size = new System.Drawing.Size(143, 22);
             this.dataPrazo.TabIndex = 15;
             this.dataPrazo.Enter += new System.EventHandler(this.dataPrazo_Enter);
             // 
@@ -236,7 +244,7 @@
             this.labelPrazo.AutoSize = true;
             this.labelPrazo.Location = new System.Drawing.Point(334, 187);
             this.labelPrazo.Name = "labelPrazo";
-            this.labelPrazo.Size = new System.Drawing.Size(84, 18);
+            this.labelPrazo.Size = new System.Drawing.Size(81, 16);
             this.labelPrazo.TabIndex = 16;
             this.labelPrazo.Text = "Data Final";
             // 
@@ -255,7 +263,7 @@
             this.labelAdicionaCategoria.AutoSize = true;
             this.labelAdicionaCategoria.Location = new System.Drawing.Point(567, 349);
             this.labelAdicionaCategoria.Name = "labelAdicionaCategoria";
-            this.labelAdicionaCategoria.Size = new System.Drawing.Size(150, 18);
+            this.labelAdicionaCategoria.Size = new System.Drawing.Size(144, 16);
             this.labelAdicionaCategoria.TabIndex = 18;
             this.labelAdicionaCategoria.Text = "Adiciona Categoria";
             // 
@@ -277,7 +285,7 @@
             this.labelCategoria.AutoSize = true;
             this.labelCategoria.Location = new System.Drawing.Point(334, 281);
             this.labelCategoria.Name = "labelCategoria";
-            this.labelCategoria.Size = new System.Drawing.Size(160, 18);
+            this.labelCategoria.Size = new System.Drawing.Size(153, 16);
             this.labelCategoria.TabIndex = 20;
             this.labelCategoria.Text = "Seleciona Categoria";
             // 
@@ -298,7 +306,7 @@
             this.tabControl1.Controls.Add(this.detalhe);
             this.tabControl1.Controls.Add(this.config);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -315,10 +323,10 @@
             this.Home.Controls.Add(this.labelN);
             this.Home.Controls.Add(this.label2);
             this.Home.Controls.Add(this.label1);
-            this.Home.Location = new System.Drawing.Point(4, 27);
+            this.Home.Location = new System.Drawing.Point(4, 25);
             this.Home.Name = "Home";
             this.Home.Padding = new System.Windows.Forms.Padding(3);
-            this.Home.Size = new System.Drawing.Size(827, 465);
+            this.Home.Size = new System.Drawing.Size(827, 467);
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
@@ -340,7 +348,7 @@
             this.labelNick.AutoSize = true;
             this.labelNick.Location = new System.Drawing.Point(95, 47);
             this.labelNick.Name = "labelNick";
-            this.labelNick.Size = new System.Drawing.Size(0, 18);
+            this.labelNick.Size = new System.Drawing.Size(0, 16);
             this.labelNick.TabIndex = 7;
             // 
             // labelNivel
@@ -348,7 +356,7 @@
             this.labelNivel.AutoSize = true;
             this.labelNivel.Location = new System.Drawing.Point(692, 47);
             this.labelNivel.Name = "labelNivel";
-            this.labelNivel.Size = new System.Drawing.Size(0, 18);
+            this.labelNivel.Size = new System.Drawing.Size(0, 16);
             this.labelNivel.TabIndex = 6;
             // 
             // labelNome
@@ -356,7 +364,7 @@
             this.labelNome.AutoSize = true;
             this.labelNome.Location = new System.Drawing.Point(95, 47);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(0, 18);
+            this.labelNome.Size = new System.Drawing.Size(0, 16);
             this.labelNome.TabIndex = 5;
             // 
             // Tarefa
@@ -419,7 +427,7 @@
             // 
             // detalhe
             // 
-            this.detalhe.Controls.Add(this.dataGridView1);
+            this.detalhe.Controls.Add(this.listaTarefas);
             this.detalhe.Controls.Add(this.labelAndamento);
             this.detalhe.Controls.Add(this.emAndamento);
             this.detalhe.Controls.Add(this.labelPontos);
@@ -428,79 +436,36 @@
             this.detalhe.Controls.Add(this.LabelPontosstatic);
             this.detalhe.Controls.Add(this.labelTotal);
             this.detalhe.Controls.Add(this.concluida);
-            this.detalhe.Location = new System.Drawing.Point(4, 27);
+            this.detalhe.Location = new System.Drawing.Point(4, 25);
             this.detalhe.Name = "detalhe";
-            this.detalhe.Size = new System.Drawing.Size(827, 465);
+            this.detalhe.Size = new System.Drawing.Size(827, 467);
             this.detalhe.TabIndex = 2;
             this.detalhe.Text = "Detalhes";
             this.detalhe.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // listaTarefas
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nome,
+            this.listaTarefas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listaTarefas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.listaTarefas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.listaTarefas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaTarefas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nome_tarefa,
             this.detalhes,
-            this.colCategoria,
-            this.dias,
-            this.status,
-            this.dificuldade,
-            this.pontos});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(827, 288);
-            this.dataGridView1.TabIndex = 14;
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Tarefa";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            // 
-            // detalhes
-            // 
-            this.detalhes.HeaderText = "Descrição";
-            this.detalhes.Name = "detalhes";
-            this.detalhes.ReadOnly = true;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.HeaderText = "Categoria";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
-            // 
-            // dias
-            // 
-            this.dias.HeaderText = "Data Criação";
-            this.dias.Name = "dias";
-            this.dias.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // dificuldade
-            // 
-            this.dificuldade.HeaderText = "Dificuldade";
-            this.dificuldade.Name = "dificuldade";
-            this.dificuldade.ReadOnly = true;
-            // 
-            // pontos
-            // 
-            this.pontos.HeaderText = " + Total Pontos";
-            this.pontos.Name = "pontos";
-            this.pontos.ReadOnly = true;
+            this.categoria_,
+            this.diasRestantes,
+            this.prioridade,
+            this.estatus,
+            this.pontos_});
+            this.listaTarefas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listaTarefas.Location = new System.Drawing.Point(0, 0);
+            this.listaTarefas.Name = "listaTarefas";
+            this.listaTarefas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.listaTarefas.RowHeadersVisible = false;
+            this.listaTarefas.RowHeadersWidth = 50;
+            this.listaTarefas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listaTarefas.Size = new System.Drawing.Size(827, 277);
+            this.listaTarefas.TabIndex = 14;
             // 
             // labelAndamento
             // 
@@ -564,6 +529,64 @@
             this.config.Text = "Configuração";
             this.config.UseVisualStyleBackColor = true;
             // 
+            // oBJETIVOS_METASDataSet
+            // 
+            this.oBJETIVOS_METASDataSet.DataSetName = "OBJETIVOS_METASDataSet";
+            this.oBJETIVOS_METASDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tAREFASBindingSource
+            // 
+            this.tAREFASBindingSource.DataMember = "TAREFAS";
+            this.tAREFASBindingSource.DataSource = this.oBJETIVOS_METASDataSet;
+            // 
+            // tAREFASTableAdapter
+            // 
+            this.tAREFASTableAdapter.ClearBeforeFill = true;
+            // 
+            // tAREFASBindingSource1
+            // 
+            this.tAREFASBindingSource1.DataMember = "TAREFAS";
+            this.tAREFASBindingSource1.DataSource = this.oBJETIVOS_METASDataSet;
+            // 
+            // nome_tarefa
+            // 
+            this.nome_tarefa.HeaderText = "Tarefa";
+            this.nome_tarefa.Name = "nome_tarefa";
+            // 
+            // detalhes
+            // 
+            this.detalhes.HeaderText = "Descrição";
+            this.detalhes.Name = "detalhes";
+            // 
+            // categoria_
+            // 
+            this.categoria_.HeaderText = "Categoria";
+            this.categoria_.Name = "categoria_";
+            // 
+            // diasRestantes
+            // 
+            this.diasRestantes.HeaderText = "Dias Restantes";
+            this.diasRestantes.Name = "diasRestantes";
+            // 
+            // prioridade
+            // 
+            this.prioridade.HeaderText = "Prioridade";
+            this.prioridade.Name = "prioridade";
+            this.prioridade.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.prioridade.ToolTipText = "Click Para concluir";
+            // 
+            // estatus
+            // 
+            this.estatus.HeaderText = "Status";
+            this.estatus.Name = "estatus";
+            this.estatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // pontos_
+            // 
+            this.pontos_.HeaderText = "Pontos ";
+            this.pontos_.Name = "pontos_";
+            // 
             // Tarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -583,7 +606,10 @@
             this.Tarefa.PerformLayout();
             this.detalhe.ResumeLayout(false);
             this.detalhe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaTarefas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oBJETIVOS_METASDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tAREFASBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tAREFASBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -621,19 +647,23 @@
         private System.Windows.Forms.Label labelConcluidas;
         private System.Windows.Forms.Label labelTotalTarefas;
         private System.Windows.Forms.Label LabelPontosstatic;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalhes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dificuldade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pontos;
+        private System.Windows.Forms.DataGridView listaTarefas;
         private System.Windows.Forms.Label labelNome;
         private System.Windows.Forms.Label labelNivel;
         private System.Windows.Forms.Label labelNick;
         private System.Windows.Forms.Button btnRemoveCategoria;
         private System.Windows.Forms.Button btnAdicionaCategoria;
         private System.Windows.Forms.PictureBox picture;
+        private OBJETIVOS_METASDataSet oBJETIVOS_METASDataSet;
+        private System.Windows.Forms.BindingSource tAREFASBindingSource;
+        private OBJETIVOS_METASDataSetTableAdapters.TAREFASTableAdapter tAREFASTableAdapter;
+        private System.Windows.Forms.BindingSource tAREFASBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome_tarefa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalhes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoria_;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diasRestantes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prioridade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pontos_;
     }
 }

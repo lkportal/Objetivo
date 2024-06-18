@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OBJETIVOS_METASDataSet" targetNamespace="http://tempuri.org/OBJETIVOS_METASDataSet.xsd" xmlns:mstns="http://tempuri.org/OBJETIVOS_METASDataSet.xsd" xmlns="http://tempuri.org/OBJETIVOS_METASDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="OBJETIVOS_METASConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="OBJETIVOS_METASConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MetasObjetivos.Properties.Settings.GlobalReference.Default.OBJETIVOS_METASConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TAREFASTableAdapter" GeneratorDataComponentClassName="TAREFASTableAdapter" Name="TAREFAS" UserDataComponentName="TAREFASTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="OBJETIVOS_METASConnectionString (Settings)" DbObjectName="OBJETIVOS_METAS.dbo.TAREFAS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NOME_TAREFA, DETALHES, CATEGORIA, DATA_CONCLUSAO, ESTATUS, PRIORIDADE, PONTOS FROM dbo.TAREFAS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NOME_TAREFA" DataSetColumn="NOME_TAREFA" />
+              <Mapping SourceColumn="DETALHES" DataSetColumn="DETALHES" />
+              <Mapping SourceColumn="CATEGORIA" DataSetColumn="CATEGORIA" />
+              <Mapping SourceColumn="DATA_CONCLUSAO" DataSetColumn="DATA_CONCLUSAO" />
+              <Mapping SourceColumn="ESTATUS" DataSetColumn="ESTATUS" />
+              <Mapping SourceColumn="PRIORIDADE" DataSetColumn="PRIORIDADE" />
+              <Mapping SourceColumn="PONTOS" DataSetColumn="PONTOS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OBJETIVOS_METASDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="OBJETIVOS_METASDataSet" msprop:Generator_DataSetName="OBJETIVOS_METASDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TAREFAS" msprop:Generator_RowEvHandlerName="TAREFASRowChangeEventHandler" msprop:Generator_RowDeletedName="TAREFASRowDeleted" msprop:Generator_RowDeletingName="TAREFASRowDeleting" msprop:Generator_RowEvArgName="TAREFASRowChangeEvent" msprop:Generator_TablePropName="TAREFAS" msprop:Generator_RowChangedName="TAREFASRowChanged" msprop:Generator_RowChangingName="TAREFASRowChanging" msprop:Generator_TableClassName="TAREFASDataTable" msprop:Generator_RowClassName="TAREFASRow" msprop:Generator_TableVarName="tableTAREFAS" msprop:Generator_UserTableName="TAREFAS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOME_TAREFA" msprop:Generator_ColumnPropNameInRow="NOME_TAREFA" msprop:Generator_ColumnPropNameInTable="NOME_TAREFAColumn" msprop:Generator_ColumnVarNameInTable="columnNOME_TAREFA" msprop:Generator_UserColumnName="NOME_TAREFA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DETALHES" msprop:Generator_ColumnPropNameInRow="DETALHES" msprop:Generator_ColumnPropNameInTable="DETALHESColumn" msprop:Generator_ColumnVarNameInTable="columnDETALHES" msprop:Generator_UserColumnName="DETALHES" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CATEGORIA" msprop:Generator_ColumnPropNameInRow="CATEGORIA" msprop:Generator_ColumnPropNameInTable="CATEGORIAColumn" msprop:Generator_ColumnVarNameInTable="columnCATEGORIA" msprop:Generator_UserColumnName="CATEGORIA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATA_CONCLUSAO" msprop:Generator_ColumnPropNameInRow="DATA_CONCLUSAO" msprop:Generator_ColumnPropNameInTable="DATA_CONCLUSAOColumn" msprop:Generator_ColumnVarNameInTable="columnDATA_CONCLUSAO" msprop:Generator_UserColumnName="DATA_CONCLUSAO" type="xs:dateTime" />
+              <xs:element name="ESTATUS" msprop:Generator_ColumnPropNameInRow="ESTATUS" msprop:Generator_ColumnPropNameInTable="ESTATUSColumn" msprop:Generator_ColumnVarNameInTable="columnESTATUS" msprop:Generator_UserColumnName="ESTATUS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRIORIDADE" msprop:Generator_ColumnPropNameInRow="PRIORIDADE" msprop:Generator_ColumnPropNameInTable="PRIORIDADEColumn" msprop:Generator_ColumnVarNameInTable="columnPRIORIDADE" msprop:Generator_UserColumnName="PRIORIDADE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PONTOS" msprop:Generator_ColumnPropNameInRow="PONTOS" msprop:Generator_ColumnPropNameInTable="PONTOSColumn" msprop:Generator_ColumnVarNameInTable="columnPONTOS" msprop:Generator_UserColumnName="PONTOS" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

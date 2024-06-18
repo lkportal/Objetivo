@@ -26,6 +26,8 @@ namespace MetasObjetivos {
         private int Pontos;
         ClassTarefas tarefas;
         SqlCommand command;
+        SqlDataAdapter adpter;
+     
 
 
         public Tarefas(int iDUsuario,string Nome,int Nivel) {
@@ -35,11 +37,31 @@ namespace MetasObjetivos {
             this.Nivel = Nivel;
         }
 
-        private void Tarefas_Load(object sender, EventArgs e) {
+        private void Tarefas_Load(object sender, EventArgs e) { 
             labelNick.Text = Nick;
             labelNivel.Text = Nivel.ToString();
-           
-           
+            #region teste 
+            try {
+                BDSQLServer.Connection();
+                string query = "select nome_tarefa,detalhes,categoria,DATEDIFF(DAY,DATA_CRIACAO,DATA_CONCLUSAO) as 'Dias_Restatntes',ESTATUS,PRIORIDADE,PONTOS from TAREFAS";
+                command = new SqlCommand(query, BDSQLServer.Connection());
+                command.ExecuteNonQuery();
+                adpter = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adpter.Fill(dt);
+                foreach (DataRow dr in dt.Rows) {
+                    listaTarefas.Rows.Add(dr.ItemArray);                     
+                }
+            } catch(Exception ex) {
+                MessageBox.Show(ex.Message, "AVISO ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } finally {
+                BDSQLServer.Desconnection();
+                command.Dispose();
+                adpter.Dispose();
+            }
+            #endregion
+
+
         }
 
         private void btnAdicionaCategoria_Click(object sender, EventArgs e) {
