@@ -1,0 +1,94 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Rider
+.idea/
+
+# Rider DotNetCore 
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ide-warnings
+
+# Mono auto generated files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Lock file for package manager
+project.lock.json
+project.fragment.lock.json
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Uncomment if necessary however generally it will be regenerated if needed
+# JetBrains Rider Unity support
+#.idea/modules.xml
+#.idea/workspace.xml
+#.idea/.idea/
+#.idea/.ideaName
+#.idea/tasks.xml
+#.idea/runConfigurations/
+#.idea/dictionaries/
+#.idea/libraries/
+#.idea/dictionaries/
+.idea/.shelf/
+.idea/shelf/
+.idea/idea-shell-script-runner.xml
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# .NET Core 2
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Razor Views
+.vs/
+.vs/<project_name>/v16/.suo
+.vs/<project_name>/v16/Server/sqlite3/db.lock
+.vs/<project_name>/v16/Server/sqlite3/v16/db.lock
+.vs/<project_name>/v16/Server/sqlite3/v16/db.sqlite3
+
+# User-specific files
+.vscode/
+.idea/
